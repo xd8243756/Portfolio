@@ -56,7 +56,7 @@ function openimage(imageName, element) {
 }
 
 function myfunction() {
-    console.log("A");
+
     let x = document.getElementById("nav_List_li")
     x.classList.toggle("responsive");
 }
@@ -67,18 +67,47 @@ if (hamBurgerMenu && menu) {
     hamBurgerMenu.addEventListener("click", function (e) {
         e.stopPropagation();
         menu.classList.toggle("open");
-        console.log(1);
+
     });
 
     menu.addEventListener("click", function (e) {
         e.stopPropagation();
-        // console.log(2);
+
     });
     document.addEventListener("click", function () {
         menu.classList.remove("responsive");
-        console.log(3);
+
     });
 }
+// function workslide() {
+//     const box = document.querySelector(".img_colume_show")
+//     box.innerHTML += box.innerHTML;
 
+//     let speed = 1;
+//     let animationId;
+//     function scroll() {
+//         box.scrollLeft += speed;
+//         if (box.scrollLeft > box.scrollWidth / 2) {
+//             box.scrollLeft = 0;
+//         }
+//         animationId = requestAnimationFrame(scroll);
+//         // console.log(animationId);
+//     }
+//     function starScroll() {
+//         animationId = requestAnimationFrame(scroll);
+//     }
 
+//     function stopScroll() {
+
+//         cancelAnimationFrame(animationId);
+
+//     }
+
+//     box.addEventListener('mouseenter', stopScroll);
+//     box.addEventListener('mouseleave', starScroll);
+
+//     starScroll();
+
+// }
+// workslide();
 document.getElementById("defaultOpen").click();
