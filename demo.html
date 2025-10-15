@@ -17,13 +17,13 @@
             <div class="logo">
                 <h1>燐的繪圖小窩</h1>
             </div>
-            <div class="nav_List">
+            <div class="nav_List" id="nav_List">
                 <ul class="nav_List_li" id="nav_List_li">
                     <li><a href="#about">關於我&nbsp;</a></li>
                     <li><a href="#gallery">作品集&nbsp;</a></li>
                     <li><a href="#sns">社群&nbsp;</a></li>
                     <li>
-                        <a href="javascript:void(0);" class="icon" onclick="myfunction()" id="HBG">
+                        <a href="javascript:void(0);" class="icon" id="HBG">
                             &#9776;
                         </a>
                     </li>
@@ -62,7 +62,8 @@
                 <h1>拔刀一瞬，殘光盡現</h1>
                 <p>「我要出招了，請賜教」</p>
             </div>
-
+            <a class="prev" id="prev">&#10094;</a>
+            <a class="next" id="next">&#10095;</a>
         </div>
         <button class="tablink" id="defaultOpen">作品預覽1</button>
         <button class="tablink" id="open2">作品預覽2</button>
@@ -92,8 +93,12 @@
             <h2>作品集</h2>
             <hr>
             <div class="img_show">
-                <div class="img_colume">
-                    <p>直式插畫</p>
+                <button class="image_Btn active" onclick="filterSelection('all')">全部插圖</button>
+                <button class="image_Btn" onclick="filterSelection('colume')">直式插圖</button>
+                <button class="image_Btn" onclick="filterSelection('row')">橫式插圖</button>
+
+                <div class="img colume">
+
                     <div class="img_colume_show">
                         <img src="./art/08.jpg" alt="" class="artwork_for_colume">
                         <img src="./art/05.jpg" alt="" class="artwork_for_colume">
@@ -102,20 +107,19 @@
                         <img src="./art/03.jpg" alt="" class="artwork_for_colume">
                         <img src="./art/11.jpg" alt="" class="artwork_for_colume">
                     </div>
-
                 </div>
 
-                <hr>
+                <div class="img row">
 
-                <div class="img_row_show">
-                    <p>橫式插畫</p>
-                    <img src="./art/10.png" alt="" class="artwork_for_row">
-                    <img src="./art/09.jpg" alt="" class="artwork_for_row">
-                    <img src="./art/07.jpg" alt="" class="artwork_for_row">
-                    <img src="./art/02.jpg" alt="" class="artwork_for_row">
-                    <img src="./art/01.jpg" alt="" class="artwork_for_row">
-
+                    <div class="img_row_show">
+                        <img src="./art/10.png" alt="" class="artwork_for_row">
+                        <img src="./art/09.jpg" alt="" class="artwork_for_row">
+                        <img src="./art/07.jpg" alt="" class="artwork_for_row">
+                        <img src="./art/02.jpg" alt="" class="artwork_for_row">
+                        <img src="./art/01.jpg" alt="" class="artwork_for_row">
+                    </div>
                 </div>
+
             </div>
 
         </section>
