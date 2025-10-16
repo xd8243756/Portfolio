@@ -44,22 +44,22 @@
     <main>
         <div id="image_slidebox">
             <div id="image1" class="tabcontent">
-                <h1>受流星祝福之下的精靈少女</h1>
+                <h1>流星之下的少女</h1>
                 <p>「"今夜的流星雨.....真美呢"」</p>
             </div>
 
             <div id="image2" class="tabcontent">
-                <h1>隨風出鞘，白刃一閃</h1>
+                <h1>銀刃一閃</h1>
                 <p>「只要...斬落足以！」</p>
             </div>
 
             <div id="image3" class="tabcontent">
-                <h1>將祈願寄宿於這盞燈火之中</h1>
+                <h1>將祈念寄宿於燈火</h1>
                 <p>「希望能傳達給遠方的你...」</p>
             </div>
 
             <div id="image4" class="tabcontent">
-                <h1>拔刀一瞬，殘光盡現</h1>
+                <h1>殘光一瞬</h1>
                 <p>「我要出招了，請賜教」</p>
             </div>
             <a class="prev" id="prev">&#10094;</a>
@@ -93,30 +93,32 @@
             <h2>作品集</h2>
             <hr>
             <div class="img_show">
-                <button class="image_Btn active" onclick="filterSelection('all')">全部插圖</button>
-                <button class="image_Btn" onclick="filterSelection('colume')">直式插圖</button>
-                <button class="image_Btn" onclick="filterSelection('row')">橫式插圖</button>
-
+                <div class="button_nav">
+                    <button class="image_change_Btn active" onclick="filterSelection('all')">全部插圖</button>
+                    <button class="image_change_Btn" onclick="filterSelection('colume')">直式插圖</button>
+                    <button class="image_change_Btn" onclick="filterSelection('row')">橫式插圖</button>
+                </div>
                 <div class="img colume">
 
                     <div class="img_colume_show">
-                        <img src="./art/08.jpg" alt="" class="artwork_for_colume">
-                        <img src="./art/05.jpg" alt="" class="artwork_for_colume">
-                        <img src="./art/06.jpg" alt="" class="artwork_for_colume">
-                        <img src="./art/04.jpg" alt="" class="artwork_for_colume">
-                        <img src="./art/03.jpg" alt="" class="artwork_for_colume">
-                        <img src="./art/11.jpg" alt="" class="artwork_for_colume">
+                        <img src="./art/08.jpg" alt="" class="artwork_for_colume" id="">
+                        <img src="./art/05.jpg" alt="" class="artwork_for_colume" id="">
+                        <img src="./art/06.jpg" alt="" class="artwork_for_colume" id="">
+                        <img src="./art/04.jpg" alt="" class="artwork_for_colume" id="">
+                        <img src="./art/03.jpg" alt="" class="artwork_for_colume" id="">
+                        <img src="./art/11.jpg" alt="" class="artwork_for_colume" id="">
+                        <img src="./art/12.jpg" alt="" class="artwork_for_colume" id="">
                     </div>
                 </div>
 
                 <div class="img row">
 
                     <div class="img_row_show">
-                        <img src="./art/10.png" alt="" class="artwork_for_row">
-                        <img src="./art/09.jpg" alt="" class="artwork_for_row">
-                        <img src="./art/07.jpg" alt="" class="artwork_for_row">
-                        <img src="./art/02.jpg" alt="" class="artwork_for_row">
-                        <img src="./art/01.jpg" alt="" class="artwork_for_row">
+                        <img src="./art/10.png" alt="" class="artwork_for_row" id="">
+                        <img src="./art/09.jpg" alt="" class="artwork_for_row" id="">
+                        <img src="./art/07.jpg" alt="" class="artwork_for_row" id="">
+                        <img src="./art/02.jpg" alt="" class="artwork_for_row" id="">
+                        <img src="./art/01.jpg" alt="" class="artwork_for_row" id="">
                     </div>
                 </div>
 
@@ -125,16 +127,50 @@
         </section>
 
 
-        <section>
+        <section id="sns">
             <div id="social">
-                <h2>社群</h2>
+                <h2>社群：</h2>
                 <pre>
-                Pixiv：@rin_draw<br>
+                Pixiv：@xd8243756<br>
                 Twitter：@xd8243756
-            </pre>
+                </pre>
             </div>
 
         </section>
+
+        <div id="myModal" class="modal">
+                <div class="modal-content" id="container">
+                    <span class="header">
+                        作品名稱：11111111111111111111111111111111111 <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                        1111111111111111111111111111111111111        <br>
+                    </span>
+                    <br>
+
+                    <div class="modal-content-image">
+                        <img src="" alt="">
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <!-- <div class="modal-content modal-content_Overlay">
+                <img src="" alt="">
+            </div> -->
+        </div>
 
     </main>
 

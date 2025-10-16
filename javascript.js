@@ -38,6 +38,51 @@ document.getElementById("prev").addEventListener("click", goPrev)
 document.getElementById("next").addEventListener("click", goNext)
 
 
+let select = document.querySelector(".img_show");
+console.log(select);
+select.addEventListener("click", function (e) {
+    if (e.target.tagName.toLowerCase() === "img") {
+        let choose_img = e.target
+        const modal = document.getElementById("myModal");
+        const container = document.getElementById("container")
+        console.log(choose_img);
+        let click = 1;
+
+        if (click == 1) {
+            let x = modal.querySelector(".modal-content > div > img")
+            x.src = `${choose_img.src}`;
+            if (choose_img.className.includes("colume")) {
+                let y = document.querySelector(".modal-content-image > img");
+                y.style.width = "600px";
+                y.style.height = "600px";
+                y.style.marginLeft = "720px";
+                
+
+            }
+            if (choose_img.className.includes("row")) {
+                let y = document.querySelector(".modal-content-image > img");
+                console.log(y);
+                y.style.width = "800px";
+                y.style.height = "600px";
+                y.style.marginLeft = "480px";
+
+            }
+            modal.style.display = "block";  
+        }
+
+
+        window.onclick = function (e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    }
+});
+
+
+
+
 function openimage(imageName, element) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -116,13 +161,13 @@ function filterSelection(c) {
         document.querySelector(".img_colume_show").style.whiteSpace = "normal";
         document.querySelector(".img_row_show").style.overflow = "hidden";
         document.querySelector(".img_row_show").style.whiteSpace = "normal";
-        
+
     }
-    if(c == "colume"){
+    if (c == "colume") {
         document.querySelector(".img_colume_show").style.overflow = "auto";
         document.querySelector(".img_colume_show").style.whiteSpace = "nowrap";
     }
-    if(c == "row"){
+    if (c == "row") {
         document.querySelector(".img_row_show").style.overflow = "auto";
         document.querySelector(".img_row_show").style.whiteSpace = "nowrap";
     }
@@ -133,27 +178,27 @@ function filterSelection(c) {
     }
 }
 function w3AddClass(element, name) {
-  let i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
+    let i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
 
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+    }
 
 }
 
 function w3RemoveClass(element, name) {
-  let i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
+    let i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
 
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
     }
-  }
-  element.className = arr1.join(" ");
+    element.className = arr1.join(" ");
 }
 
 
