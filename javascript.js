@@ -37,48 +37,51 @@ document.getElementById("open4").addEventListener("click", function () {
 document.getElementById("prev").addEventListener("click", goPrev)
 document.getElementById("next").addEventListener("click", goNext)
 
+let artworks = []
+fetch("./artInfo.json")
+    .then(function (responsive) {
+        return responsive.json();
+    })
+    .then(function (responsive) {
+        artworks = responsive;
+        console.log(artworks);
+        
 
-let select = document.querySelector(".img_show");
-console.log(select);
-select.addEventListener("click", function (e) {
-    if (e.target.tagName.toLowerCase() === "img") {
-        let choose_img = e.target
-        const modal = document.getElementById("myModal");
-        const container = document.getElementById("container")
-        console.log(choose_img);
-        let click = 1;
+        let select = document.querySelector(".img_show");
+        console.log(select);
+        select.addEventListener("click", function (e) {
+            if (e.target.tagName.toLowerCase() === "img") {
+                console.log(e.target);
+                const src = e.target.getAttribute("src");
+                const artInfo = artworks.find(function(artInfo){return artInfo.img === src });
+                document.querySelector(".art_name").innerHTML = `<h2>作品名稱： ${artInfo.art_name}</h2>`;
+                document.querySelector(".art_info").innerHTML = `<h2>作品資訊：</h2> <br> ${artInfo.art_info}`;
 
-        if (click == 1) {
-            let x = modal.querySelector(".modal-content > div > img")
-            x.src = `${choose_img.src}`;
-            if (choose_img.className.includes("colume")) {
-                let y = document.querySelector(".modal-content-image > img");
-                y.style.width = "600px";
-                y.style.height = "600px";
-                y.style.marginLeft = "720px";
-                
+                const modal = document.getElementById("myModal");
+                let click = 1;
+                if (click == 1) {
+                    let x = modal.querySelector(".modal-content img")
+                    x.src = src; 
+                    modal.style.display = "block";
+                }
+
+
+                window.onclick = function (e) {
+                    if (e.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
 
             }
-            if (choose_img.className.includes("row")) {
-                let y = document.querySelector(".modal-content-image > img");
-                console.log(y);
-                y.style.width = "800px";
-                y.style.height = "600px";
-                y.style.marginLeft = "480px";
-
-            }
-            modal.style.display = "block";  
-        }
+        });
+    })
 
 
-        window.onclick = function (e) {
-            if (e.target === modal) {
-                modal.style.display = "none";
-            }
-        }
 
-    }
-});
+
+
+
+
 
 
 
