@@ -3,13 +3,20 @@ markdown# 燐的繪圖小窩 🎨
 個人插畫作品集網站，展示日系插圖創作，風格以和風要素為主。
 
 ## 📁 專案結構
-Portfolio/
+Portfolio
+
 ├── demo.html       # 主要網頁（入口點）
+
 ├── mystyle.css     # 樣式設定
+
 ├── javascript.js   # 網頁互動邏輯
+
 ├── artInfo.json    # 作品資訊資料
+
 ├── art/            # 插圖圖片資料夾
+
 └── _js/            # jQuery 函式庫
+
 
 ## 🚀 使用方式
 
